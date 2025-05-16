@@ -3,18 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Matthew Louis - Luxury Real Estate Strategist with Wharton PhD expertise in high-end property investment and optimization">
-    <title>Matthew Louis | Luxury Real Estate Strategist</title>
+    <meta name="description" content="Matthew Louis - Luxury Real Estate Strategist specializing in California and Mexico properties">
+    <title>Matthew Louis | California & Mexico Luxury Properties</title>
     
     <!-- Preload critical assets -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" as="style">
-    
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -26,7 +20,7 @@
     <style>
         :root {
             --ivory: #F9F7F5;
-            --charcoal: #1E1E1E;
+            --charcoal: #1A1A1A;
             --gold: #C4A265;
             --taupe: #8B7D6B;
             --slate: #6E7F80;
@@ -39,19 +33,17 @@
             box-sizing: border-box;
         }
         
-        html {
-            scroll-behavior: smooth;
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
         }
         
         body {
             font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-            margin: 0;
-            padding: 0;
             color: var(--charcoal);
             background-color: var(--ivory);
             display: flex;
-            min-height: 100vh;
-            overflow-x: hidden;
             line-height: 1.6;
             font-weight: 400;
             text-rendering: optimizeLegibility;
@@ -140,6 +132,7 @@
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
+            height: 100vh;
         }
         
         section {
@@ -156,8 +149,8 @@
         #home {
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(30,30,30,0.92), rgba(30,30,30,0.92)), 
-                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1800&q=80');
+            background: linear-gradient(rgba(26,26,26,0.92), rgba(26,26,26,0.92)), 
+                        url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1800&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -265,6 +258,7 @@
             align-items: center;
             gap: 100px;
             padding: 80px 10%;
+            background-color: var(--ivory);
         }
         
         .profile-image-container {
@@ -368,8 +362,8 @@
             opacity: 0.7;
         }
         
-        /* Services Section */
-        #services {
+        /* Properties Section */
+        #properties {
             background: var(--charcoal);
             color: white;
             display: flex;
@@ -378,68 +372,82 @@
             padding: 100px 10%;
         }
         
-        .services-header {
+        .properties-header {
             margin-bottom: 80px;
             max-width: 600px;
         }
         
-        .services-grid {
+        .properties-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
         
-        .service-card {
+        .property-card {
             background: rgba(255,255,255,0.03);
-            padding: 50px 40px;
-            border-top: 3px solid var(--gold);
+            padding: 0;
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            height: 500px;
         }
         
-        .service-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
+        .property-image {
             width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(196, 162, 101, 0.03) 0%, rgba(196, 162, 101, 0) 100%);
-            z-index: 0;
+            height: 60%;
+            object-fit: cover;
             transition: var(--transition);
-            opacity: 0;
         }
         
-        .service-card:hover {
+        .property-content {
+            padding: 30px;
+        }
+        
+        .property-card:hover {
             transform: translateY(-10px);
-            background: rgba(255,255,255,0.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
         
-        .service-card:hover::before {
-            opacity: 1;
+        .property-card:hover .property-image {
+            transform: scale(1.05);
         }
         
-        .service-icon {
-            font-size: 2.8rem;
+        .property-location {
             color: var(--gold);
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
         }
         
-        .service-title {
+        .property-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.6rem;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 15px;
         }
         
-        .service-description {
+        .property-description {
             opacity: 0.8;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .property-features {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .feature i {
+            color: var(--gold);
         }
         
         /* Contact Section */
@@ -448,7 +456,7 @@
             align-items: center;
             justify-content: center;
             background: linear-gradient(rgba(249,247,245,0.93), rgba(249,247,245,0.93)), 
-                        url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1800&q=80');
+                        url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1800&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -513,6 +521,16 @@
         
         .info-content a:hover {
             color: var(--gold);
+        }
+        
+        .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .whatsapp-link i {
+            font-size: 1.4rem;
         }
         
         .form-title {
@@ -599,7 +617,7 @@
         
         /* Responsive */
         @media (max-width: 1440px) {
-            #about, #services {
+            #about, #properties {
                 padding: 80px;
             }
             
@@ -637,7 +655,7 @@
                 height: auto;
             }
             
-            .services-grid {
+            .properties-grid {
                 grid-template-columns: 1fr 1fr;
             }
         }
@@ -688,7 +706,7 @@
                 font-size: 2.2rem;
             }
             
-            .services-grid {
+            .properties-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -747,9 +765,9 @@
                 <i class="fas fa-user"></i>
                 <span class="nav-label">About</span>
             </a>
-            <a href="#services" class="nav-item">
-                <i class="fas fa-briefcase"></i>
-                <span class="nav-label">Services</span>
+            <a href="#properties" class="nav-item">
+                <i class="fas fa-building"></i>
+                <span class="nav-label">Properties</span>
             </a>
             <a href="#contact" class="nav-item">
                 <i class="fas fa-envelope"></i>
@@ -764,12 +782,11 @@
         <section id="home">
             <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
                 <h1 class="hero-title">Matthew Louis</h1>
-                <p class="hero-subtitle">Luxury Real Estate Strategist</p>
+                <p class="hero-subtitle">California & Mexico Luxury Properties</p>
                 <p class="hero-text">
-                    Transforming high-value properties into exceptional investments through 
-                    data-driven strategies and bespoke management solutions. With a Wharton 
-                    pedigree and European sensibility, I elevate real estate beyond 
-                    conventional boundaries.
+                    Specializing in high-end real estate investments across California's most exclusive markets 
+                    and Mexico's premier coastal destinations. Combining Wharton financial expertise with 
+                    local market mastery to deliver exceptional returns.
                 </p>
                 <a href="#contact" class="cta-button">Schedule Consultation</a>
                 <div class="signature">ML</div>
@@ -784,21 +801,21 @@
             <div class="about-content" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                 <h2 class="section-title">About Matthew</h2>
                 <p class="about-text">
-                    A <span class="highlight">French-American financier</span> with 17 years of transatlantic experience, 
-                    I bridge the worlds of academic rigor and practical investment strategy. 
-                    My Wharton PhD in Finance informs every aspect of my <span class="highlight">property 
-                    optimization methodology</span>.
+                    A <span class="highlight">French-American real estate strategist</span> with 17 years of experience 
+                    in luxury markets, I've developed a unique expertise in <span class="highlight">California coastal properties</span> 
+                    and <span class="highlight">Mexican resort destinations</span>. My Wharton PhD in Finance provides the analytical 
+                    foundation for identifying undervalued opportunities.
                 </p>
                 <p class="about-text">
-                    After analyzing market behaviors at the highest levels, I discovered 
-                    my true calling: <span class="highlight">redefining luxury hospitality investments</span>. 
-                    My approach combines quantitative precision with an artful understanding 
-                    of what discerning travelers truly desire.
+                    After years analyzing global markets, I recognized the unique potential at the intersection of 
+                    California's tech wealth and Mexico's emerging luxury destinations. My portfolio now spans from 
+                    <span class="highlight">Silicon Valley estates</span> to <span class="highlight">Baja California beachfront villas</span>, each property carefully 
+                    selected for its appreciation potential and lifestyle appeal.
                 </p>
                 <p class="about-text">
-                    When not evaluating properties across three continents, I curate an 
-                    exceptional Bordeaux collection and advise on rare wine investments - 
-                    another passion where <span class="highlight">value meets virtuosity</span>.
+                    When not touring properties between Malibu and Cabo, I'm an avid collector of California wines 
+                    and pre-Columbian art, passions that inform my approach to <span class="highlight">curating distinctive properties</span> 
+                    with cultural resonance.
                 </p>
                 
                 <div class="stats-grid">
@@ -818,62 +835,63 @@
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services">
-            <div class="services-header" data-aos="fade-up" data-aos-duration="1000">
-                <h2 class="section-title" style="color: var(--gold);">Services</h2>
+        <!-- Properties Section -->
+        <section id="properties">
+            <div class="properties-header" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="section-title" style="color: var(--gold);">Featured Properties</h2>
                 <p class="about-text" style="color: white; opacity: 0.8;">
-                    Tailored solutions for discerning investors seeking premium returns in luxury real estate.
+                    Curated selection of luxury properties in California and Mexico
                 </p>
             </div>
-            <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-duration="800">
-                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3 class="service-title">Investment Strategy</h3>
-                    <p class="service-description">
-                        Comprehensive market analysis and acquisition planning for luxury properties with highest yield potential. 
-                        Our proprietary algorithms identify undervalued assets with 94% accuracy.
-                    </p>
+            <div class="properties-grid">
+                <div class="property-card" data-aos="fade-up" data-aos-duration="800">
+                    <img src="https://i.imgur.com/e8fb6212df7f4b02aebac4de20bc72f4.jpg" alt="California Coastal Estate" class="property-image">
+                    <div class="property-content">
+                        <div class="property-location">Malibu, California</div>
+                        <h3 class="property-title">Oceanview Modern Villa</h3>
+                        <p class="property-description">
+                            Stunning 5-bedroom contemporary estate with panoramic Pacific views, 
+                            infinity pool, and direct beach access. Recently renovated with smart 
+                            home technology.
+                        </p>
+                        <div class="property-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 5 BR</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 6 BA</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 6,500 sq ft</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                    <div class="service-icon"><i class="fas fa-home"></i></div>
-                    <h3 class="service-title">Asset Optimization</h3>
-                    <p class="service-description">
-                        Revenue maximization through dynamic pricing, strategic positioning, and premium guest experiences. 
-                        Average 28% increase in NOI within first year of implementation.
-                    </p>
+                <div class="property-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <img src="https://i.imgur.com/a500d8b30015424b9efc6a4ef81d391d.jpg" alt="Mexico Luxury Villa" class="property-image">
+                    <div class="property-content">
+                        <div class="property-location">Cabo San Lucas, Mexico</div>
+                        <h3 class="property-title">Private Beachfront Compound</h3>
+                        <p class="property-description">
+                            Exclusive 3-villa compound with 180° ocean views, private beach club, 
+                            and full staff quarters. Designed by renowned Mexican architect.
+                        </p>
+                        <div class="property-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 8 BR</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 9 BA</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 12,000 sq ft</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <div class="service-icon"><i class="fas fa-concierge-bell"></i></div>
-                    <h3 class="service-title">White-Glove Management</h3>
-                    <p class="service-description">
-                        Discreet, comprehensive property management maintaining asset value while delivering exceptional returns. 
-                        24/7 concierge service with average response time under 12 minutes.
-                    </p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
-                    <h3 class="service-title">Portfolio Diversification</h3>
-                    <p class="service-description">
-                        Strategic allocation across global luxury markets to mitigate risk and maximize returns. 
-                        Access to exclusive off-market opportunities through our investor network.
-                    </p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                    <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
-                    <h3 class="service-title">Design Curation</h3>
-                    <p class="service-description">
-                        Bespoke interior design services that increase property value and guest satisfaction. 
-                        Collaborations with renowned designers and art consultants.
-                    </p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
-                    <div class="service-icon"><i class="fas fa-globe"></i></div>
-                    <h3 class="service-title">Global Network</h3>
-                    <p class="service-description">
-                        Leverage our international connections in key luxury markets including Paris, New York, 
-                        Miami, London, and Dubai. Multilingual support team.
-                    </p>
+                <div class="property-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1800&q=80" alt="Silicon Valley Estate" class="property-image">
+                    <div class="property-content">
+                        <div class="property-location">Palo Alto, California</div>
+                        <h3 class="property-title">Tech Executive Compound</h3>
+                        <p class="property-description">
+                            Gated 2-acre property with main residence, guest house, and tech-enabled 
+                            conference pavilion. Landscaped gardens with olive groves.
+                        </p>
+                        <div class="property-features">
+                            <div class="feature"><i class="fas fa-bed"></i> 7 BR</div>
+                            <div class="feature"><i class="fas fa-bath"></i> 8 BA</div>
+                            <div class="feature"><i class="fas fa-ruler-combined"></i> 9,200 sq ft</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -886,35 +904,37 @@
                     <div class="info-item">
                         <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="info-content">
-                            <h3>Location</h3>
-                            <p>New York | Paris | Miami</p>
+                            <h3>Locations</h3>
+                            <p>California | Mexico</p>
                         </div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon"><i class="fas fa-envelope"></i></div>
                         <div class="info-content">
                             <h3>Email</h3>
-                            <a href="mailto:mlouis@luxe-estates.com">mlouis@luxe-estates.com</a>
+                            <a href="mailto:a20789480@gmail.com">a20789480@gmail.com</a>
                         </div>
                     </div>
                     <div class="info-item">
-                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
                         <div class="info-content">
-                            <h3>Phone</h3>
-                            <a href="tel:+12125551234">+1 (212) 555-1234</a>
+                            <h3>WhatsApp</h3>
+                            <a href="https://wa.me/13464093150" class="whatsapp-link">
+                                <i class="fab fa-whatsapp"></i> +1 (346) 409-3150
+                            </a>
                         </div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon"><i class="fas fa-clock"></i></div>
                         <div class="info-content">
                             <h3>Availability</h3>
-                            <p>Mon-Fri: 9AM - 6PM EST<br>
+                            <p>Mon-Fri: 9AM - 6PM PST<br>
                             By appointment only</p>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form" data-aos="fade-left" data-aos-duration="1000">
-                    <h2 class="form-title">Send Inquiry</h2>
+                    <h2 class="form-title">Property Inquiry</h2>
                     <form id="inquiryForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
@@ -925,17 +945,13 @@
                             <input type="email" id="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="interest">Interest</label>
+                            <label for="interest">Property Interest</label>
                             <select id="interest">
                                 <option value="">Select an option</option>
-                                <option value="investment">Investment Strategy</option>
-                                <option value="management">Property Management</option>
-                                <option value="acquisition">Property Acquisition</option>
-                                <option value="other">Other</option>
+                                <option value="california">California Properties</option>
+                                <option value="mexico">Mexico Properties</option>
+                                <option value="both">Both Markets</option>
+                                <option value="investment">Investment Opportunities</option>
                             </select>
                         </div>
                         <div class="form-group">
