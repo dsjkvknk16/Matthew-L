@@ -74,7 +74,7 @@
     <div id="ink-bg"></div>
     <canvas id="gameCanvas"></canvas>
     <div id="merit-counter">功德: 0</div>
-    <div id="instructions">暴打老五-静心解压</div>
+    <div id="instructions">暴打阿火-静心解压</div>
 
     <script>
         const canvas = document.getElementById('gameCanvas');
